@@ -11,7 +11,7 @@ class UserDao {
     public UserDAO(){
         users=new ArrayList()
         println "user db constructor"
-        sql = Sql.newInstance("jdbc:mysql://localhost:3306/test", "root","root", "com.mysql.jdbc.Driver")
+        sql = Sql.newInstance("jdbc:mysql://gziot.zjucolourlife.com:3306/parksec", "root","root", "com.mysql.jdbc.Driver")
 
         sql.eachRow("select * from user") {
 
@@ -20,7 +20,7 @@ class UserDao {
             email=it.email
             age=it.age
             User p = new User(username,password,email,age)
-    //def p=new User("Bob","xyz","email","55")
+//    def p=new User("Bob","xyz","email","55")
             users.add(p)
         }
     }//constructor
